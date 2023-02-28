@@ -1,0 +1,32 @@
+# Silicon Labs Project Configuration Tools: slcp, v0, Component selection file.
+project_name: CS_LEUART_Lab7
+label: CS_LEUART_Lab7
+description: |
+  This example project shows how to blink an LED in a bare-metal configuration.
+category: Example|Platform
+package: platform
+quality: production
+source:
+- {path: app.c}
+- {path: main.c}
+- {path: blink.c}
+tag: ['hardware:component:led:1+']
+include:
+- path: ''
+  file_list:
+  - {path: app.h}
+  - {path: blink.h}
+sdk: {id: gecko_sdk, version: 3.2.1}
+toolchain_settings: []
+component:
+- {id: EFR32MG12P332F1024GL125}
+- instance: [led0]
+  id: simple_led
+- {id: sl_system}
+- {id: device_init}
+- {id: brd4166a}
+- {id: sleeptimer}
+define:
+- {name: DEBUG_EFM}
+ui_hints: {}
+
